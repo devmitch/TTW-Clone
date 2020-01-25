@@ -20,7 +20,6 @@ export default class Timer extends React.Component {
     }
 
     timing() {
-        console.log("test")
         if (!this.state.isRunning) {
             this.state.isRunning = true;
             this.state.startTime = new Date().getTime();
@@ -32,7 +31,8 @@ export default class Timer extends React.Component {
             }, 1)
         } else {
             this.state.isRunning = false;
-            clearInterval(this.timer)
+            clearInterval(this.timer);
+            this.props.callbackParent();
         }
     }
 

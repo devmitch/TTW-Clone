@@ -6,6 +6,7 @@ export default class Lobby extends React.Component {
         return (
             <div>
                 <ScrambleBar/>
+                <Timer/>
             </div>
         );
     };

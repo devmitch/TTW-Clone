@@ -23,18 +23,25 @@ def scramble():
     })
 
 
-@app.route("/send_scrambles", methods=["POST"])
-def save_time():
+@app.route("/save_solve", methods=["POST"])
+def save_solve():
     data = request.get_json()
 
-    if request is not None:
+    if request is not None and data["data"]["scramble"] is not None:
         mongo.db["Lobby"].update({'LobbyId': data["lobbyId"]}, 
                                   {'$push': data}, upsert = True)
 
-    for document in mongo.db["Lobby"].find({}):
-        pprint(document)
     return "test"
+
+
+@app.route("/get_solves", methods=["GET"])
+def get_solves():
+    if request is not None:
+        lobby_id = 0
+        data = list(mongo.db["Lobby"].find({}, {"LobbyId": lobby_id}))[0]["data"]
+        return jsonify(data)
     
 
 if __name__ == "__main__":
+    mongo.db["Lobby"].delete_many({})
     app.run(debug=True)

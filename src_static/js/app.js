@@ -1,10 +1,10 @@
+const API_URL = "http://127.0.0.1:5000/";
+export default API_URL;
+
 import Lobby from "./lobby.js"
 
-const e = React.createElement
-
 ReactDOM.render(
-    <h1/>,
+    <Lobby/>,
     document.getElementById("root")
 );
 
-console.log("test");

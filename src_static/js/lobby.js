@@ -1,9 +1,7 @@
-const e = React.createElement
+import ScrambleBar from "./scramble_bar.js"
 
-class Lobby extends React.Component {
+export default class Lobby extends React.Component {
     render() {
-        return <h1>t</h1>
+        return <ScrambleBar/>
     }
 }
-
-export default Lobby;

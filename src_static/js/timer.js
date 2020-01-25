@@ -25,9 +25,11 @@ export default class Timer extends React.Component {
             this.state.startTime = new Date().getTime();
 
             this.timer = setInterval(() => {
-                this.state.displayTime = 
+                let displayTime = 
                         new Date().getTime() - this.state.startTime;
-                this.setState({displayTime: this.state.displayTime / 1000});
+                displayTime = (displayTime / 1000).toFixed(2);
+
+                this.setState({displayTime: displayTime});
             }, 1)
         } else {
             this.state.isRunning = false;

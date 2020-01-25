@@ -2,7 +2,13 @@
 
 ## Setup
 
-To start development, run
+To start development, first clone the Git repository
+
+```sh
+git clone https://github.com/V-Wong/TTW-Clone.git
+```
+
+and then run
 
 ```sh
 python3 -m venv venv

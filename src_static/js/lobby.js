@@ -36,14 +36,12 @@ export default class Lobby extends React.Component {
                                 }));
     }
 
-    getSolveData() {
-        return fetch(API_URL + "get_solves")
-            .then(response => response.json())
-            .then(responseJSON => {
-                this.setState({
-                    solves: responseJSON
-            })
-        })
+    async getSolveData() {
+        const response = await fetch(API_URL + "get_solves");
+        const responseJSON = await response.json();
+        this.setState({
+            solves: responseJSON
+        });
     }
 
     componentDidMount() {

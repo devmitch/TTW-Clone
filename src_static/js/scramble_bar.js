@@ -4,6 +4,13 @@ export default class ScrambleBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+
+        this.divStyle = {
+            width: "100%",
+            backgroundColor: "#363636",
+            textAlign: "center",
+            fontSize: "40px"
+        }
     }
 
     componentDidMount() {
@@ -17,6 +24,6 @@ export default class ScrambleBar extends React.Component {
     }
     
     render() {
-        return <div>{this.state.scramble}</div>
+        return <div style={this.divStyle}>{this.state.scramble}</div>
     }
 }

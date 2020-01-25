@@ -1,0 +1,32 @@
+{
+  "name": "TTW-Clone",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src_static/app.js",
+  "scripts": {
+    "build": "npx babel src_static --out-dir static --presets @babel/preset-react",
+    "build-watch": "npx babel --watch src_static --out-dir static --presets @babel/preset-react",
+    "start": "python3 app.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-Wong/TTW-Clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/V-Wong/TTW-Clone/issues"
+  },
+  "homepage": "https://github.com/V-Wong/TTW-Clone#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-core": "^6.26.3",
+    "babel-preset-react-app": "^9.1.0"
+  }
+}

@@ -71,8 +71,8 @@ export default class HistoryBar extends React.Component {
 
                 <table style={this.tableStyle}>
                 <tr>
-                    <th style={this.headingStyle}>Time</th>
                     <th style={this.headingStyle}>Scramble</th>
+                    <th style={this.headingStyle}>Time</th>
                 </tr>
                 {this.renderTableData()}
                 </table>

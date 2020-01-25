@@ -16,14 +16,12 @@ export default class Lobby extends React.Component {
         this.getSolveData = this.getSolveData.bind(this);
     }
 
-    newScramble() {
-        return fetch(API_URL + "scrambles")
-            .then(response => response.json())
-            .then(responseJSON => {
-                this.setState({
-                    scramble: responseJSON.scramble
-                })
-            })
+    async newScramble() {
+        const response = await fetch(API_URL + "scrambles");
+        const responseJSON = await response.json();
+        this.setState({
+            scramble: responseJSON.scramble
+        });
     }
 
     saveResult(time) {
@@ -46,6 +44,11 @@ export default class Lobby extends React.Component {
                     solves: responseJSON
             })
         })
+    }
+
+    componentDidMount() {
+        this.newScramble();
+        this.getSolveData();
     }
 
     render() {

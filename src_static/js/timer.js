@@ -32,7 +32,7 @@ export default class Timer extends React.Component {
         } else {
             this.state.isRunning = false;
             clearInterval(this.timer);
-            this.props.callbackParent();
+            this.props.callbackParent(this.state.displayTime);
         }
     }
 

@@ -1,3 +1,4 @@
-npx babel --watch src_static --out-dir static --presets react-app/prod &
-python3 app.py &
-
+pip3 install -r requirements.txt & 
+npm run build-watch &
+sudo service mongod start &
+npm run start &
